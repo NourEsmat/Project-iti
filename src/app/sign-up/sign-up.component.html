@@ -1,0 +1,60 @@
+<!-- <body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">MedLife</label>
+					<input type="text" name="txt" placeholder="User name" [(ngModel)]="signupObj.userName">
+					<input type="number" name="number" placeholder="Phone Number" [(ngModel)]="signupObj.phoneNumber">
+					<input type="password" name="pswd" placeholder="Password"[(ngModel)]="signupObj.password">
+					<button (click)="onSubmit()">Sign up</button>
+                    <div>
+						<button [routerLink]="['/login']" style="width: 150px;"> Back to Login  </button>
+					</div>
+				   
+				
+				</form>
+			</div>
+	</div>
+</body> -->
+
+<div class="page">
+	<div class="content">
+	  <div class="title" id="title-bar">
+		<div class="title__text">
+		  
+		</div>
+	  </div>
+	  
+	  <div class="content__main">
+		<div class="content__main-page">
+		  <div class="box">
+			<form  (ngSubmit)="onSubmit(postForm.value)" #postForm ="ngForm">
+			  <div class="field__group">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name" ngModel required>
+			  </div>
+			  <div class="field__group">
+				<label for="phoneNumber">phone Number</label>
+				<input type="number" name = "phoneNumber" id ="phoneNumber" ngModel required>
+			  </div>
+			  <div class="field__group">
+				<label for="phoneNumber">email</label>
+				<input type="text" name = "email" id ="email" ngModel required>
+			  </div>
+			  <div class="field__group">
+				 <label for="type">password</label>
+				 <input type="text" name = "password" id ="password" ngModel required>
+			   </div>
+			  
+			  <button id="submit" class="button" >Sign</button>
+			</form>
+		  </div>
+		</div>
+	  </div>
+	  
+	</div>
+  </div>
+
+

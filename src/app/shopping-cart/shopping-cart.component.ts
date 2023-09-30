@@ -45,7 +45,7 @@ export class ShoppingCartComponent {
     }
         
     for(let id of this.uniqueArray){
-      console.log(id);
+      // console.log(id);
       this.ps.getProductByID(id.toString()).subscribe({
         next:(data)=>{
           this.selectedProduct=  data;
@@ -54,14 +54,15 @@ export class ShoppingCartComponent {
            this.ps.getCategory(this.category).subscribe({
             next:(data)=>{
               this.allSelectedCategory=data;
+              this.calculatePrice();
             }
           });
            this.allSelectedCategory = this.selectedCategory
           this.mycart.push(this.selectedProduct); 
-          console.log(this.mycart); 
+          // console.log(this.mycart); 
         }
-      }).add(this.calculatePrice());
-    } 
+      });
+    }
     
   }    
   
@@ -71,23 +72,23 @@ export class ShoppingCartComponent {
     if(this.mySubscription){
       this.mySubscription.unsubscribe();
     }
-}
+  }
 remove(id:string){
   this.productService.getProductByID(id).subscribe({
     next:(data)=>{
       this.selectedProduct = data;
       this.productService.removeFromCart(this.selectedProduct);
-      console.log(this.productService.CartItems);
+      // console.log(this.productService.CartItems);
       this.calculatePrice();
     }
   });
 
 }
     calculatePrice(){
+      let sum=0;
       for(let item of this.mycart){     
-        this.totalPrice += item.price; 
-        console.log(this.totalPrice);
+        sum += item.price; 
     }
-    return this.totalPrice;
+    this.totalPrice=sum;
     }
 }

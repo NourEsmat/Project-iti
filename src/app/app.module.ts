@@ -23,6 +23,10 @@ import {register} from 'swiper/element/bundle';
 import { SearchComponent } from './search/search.component';
 import { SearchInCategoriesComponent } from './search-in-categories/search-in-categories.component';
 import { ContactComponent } from './contact/contact.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { EditproductComponent } from './editproduct/editproduct.component';
+import { PaymentComponent } from './payment/payment.component';
 register();
 
 @NgModule({
@@ -41,8 +45,11 @@ register();
     PageNotFoundComponent,
     SearchComponent,
     SearchInCategoriesComponent,
-    ContactComponent
-    
+    ContactComponent,
+    ShoppingCartComponent,
+    AddProductComponent,
+    EditproductComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
