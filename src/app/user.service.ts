@@ -8,7 +8,7 @@ import { User } from './models/user';
   providedIn: 'root'
 })
 export class UserService {
-  roles:['Admin','User'];
+  roles=['Admin','User'];
   signupUser:any[]=[];
   signupObj:any={
     userName:'',
