@@ -27,6 +27,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditproductComponent } from './editproduct/editproduct.component';
 import { PaymentComponent } from './payment/payment.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 register();
 
 @NgModule({
@@ -49,7 +50,9 @@ register();
     ShoppingCartComponent,
     AddProductComponent,
     EditproductComponent,
-    PaymentComponent
+    PaymentComponent,
+    SignUpComponent,
+  
   ],
   imports: [
     BrowserModule,

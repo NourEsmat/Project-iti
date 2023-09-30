@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ContactComponent } from './contact/contact.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
 
@@ -27,6 +28,8 @@ const routes: Routes = [
   { path: 'productCategory', component: ProductCategoryComponent},
   { path: 'productCategory/:searchTerm', component: ProductCategoryComponent},
   { path: 'contactUs', component: ContactComponent},
+  { path: 'SignUp', component: SignUpComponent},
+
   
   {path:'cart',component:ShoppingCartComponent},
   {path:'payment',component:PaymentComponent},

@@ -2,7 +2,7 @@ export class User{
     name?:String;
     userId?:String;
     phoneNumber?:Number;
-    userType:false;
+    userType?:false;
     password?:String;
     email?:String
 }
