@@ -170,6 +170,30 @@ server.post('/login', async (req, res) => {
   }
 })
 
+server.post('/sign-up', (req,res) => {
+
+  bcrypt.hash(req.body.password, 10)
+      .then(hash => {
+          const user = new User({
+              name: req.body.name,
+              password: hash
+          })
+
+          user.save()
+          .then(result => {
+              res.status(201).json({
+                  message: 'User created',
+                  result: result
+              })
+          })
+          .catch(err => {
+              res.status(500).json({
+                  error: err
+              })
+          })
+      })
+})
+
 server.get("/user",function(req,res){
   User.find()
   .then((data)=>res.send(data))
