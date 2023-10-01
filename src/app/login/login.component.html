@@ -1,18 +1,37 @@
-<body>
-	<div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
 
-			<div class="signup">
-				<form>
-					<label for="chk" aria-hidden="true">MedLife</label>
-					<input type="email" name="email" placeholder="Email" [(ngModel)]="loginObj.userName">
-					<input type="password" name="pswd" placeholder="Password" [(ngModel)]="loginObj.password">
-                    <button (click)=" onLogin()">Login</button>
-					<div>
-						<button [routerLink]="'/SignUp'" style="width: 150px;"> SignUp </button>
-					</div>				
-				</form>
-			</div>
+<div class="page">
+	<div class="content">
+	  <div class="title" id="title-bar">
+		<div class="title__text">
+		  
+		</div>
+	  </div>
+	  
+	  <div class="content__main">
+		<div class="content__main-page">
+		  <div class="box">
+			<form  (ngSubmit)="onSubmit(postForm.value)" #postForm ="ngForm">
 
+
+			  <div class="field__group">
+				<label for="phoneNumber">email</label>
+				<input type="email" name = "email" id ="email" ngModel required>
+			  </div>
+			  <div class="field__group">
+				 <label for="type">password</label>
+				 <input type="text" name = "password" id ="password" ngModel required>
+			   </div>
+			  
+			  <button id="submit" class="button"  >Login</button>
+
+			  <div>
+				<button [routerLink]="['/SignUp']" style="width: 150px;"> SignUp </button>
+			</div>	
+			</form>
+
+		  </div>
+		</div>
+	  </div>
+	  
 	</div>
-</body>
+  </div>
