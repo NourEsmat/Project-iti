@@ -160,30 +160,6 @@ server.post('/sign-up', (req,res) => {
 })
 
 
-
-server.post('/sign-up', (req,res) => {
-
-  bcrypt.hash(req.body.password, 10)
-      .then(hash => {
-          const user = new User({
-              name: req.body.name,
-              password: hash
-          })
-
-          user.save()
-          .then(result => {
-              res.status(201).json({
-                  message: 'User created',
-                  result: result
-              })
-          })
-          .catch(err => {
-              res.status(500).json({
-                  error: err
-              })
-          })
-      })
-})
 server.post('/login',function(req,res){
   let Email = req.body.email;
   let Password = req.body.password;
