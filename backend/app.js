@@ -140,7 +140,7 @@ server.post('/sign-up', (req,res) => {
   bcrypt.hash(req.body.password, 10)
       .then(hash => {
           const user = new User({
-              name: req.body.name,
+              email: req.body.email,
               password: hash
           })
 
@@ -158,17 +158,8 @@ server.post('/sign-up', (req,res) => {
           })
       })
 })
-server.post('/login', async (req, res) => {
-  try{
-    const user = await User.findOne({ name: req.body.name });
-  if (user && (await bcrypt.compare(req.body.password,user.password))) {
-    return res.status(200).json(user);
-  }
-  res.status(404).json({message: 'Invalid username or password'})
-  }catch(err){
-    res.status(500).json({message: err.message})
-  }
-})
+
+
 
 server.post('/sign-up', (req,res) => {
 
@@ -192,6 +183,16 @@ server.post('/sign-up', (req,res) => {
               })
           })
       })
+})
+server.post('/login',function(req,res){
+  let Email = req.body.email;
+  let Password = req.body.password;
+ User.findOne({ email:Email ,password:Password})
+  .then((User)=>{
+    res.send(User)
+  }).catch(err=>{
+    console.log(err);
+  })
 })
 
 server.get("/user",function(req,res){
